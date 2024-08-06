@@ -4,7 +4,7 @@ metadata:
   name: ml-app-service
 spec:
   selector:
-    app: ml-app
+    app: ml-flask-app
   ports:
     - protocol: "TCP"
       port: 6000
