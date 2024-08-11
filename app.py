@@ -1,3 +1,6 @@
+# Antes de iniciar a aplicação deve-se fazer o Download do modelo YOLOv3:
+# https://github.com/OlafenwaMoses/ImageAI/releases/download/3.0.0-pretrained/yolov3.pt/
+
 from fastapi import FastAPI
 from imageai.Detection import ObjectDetection
 import os
@@ -33,5 +36,8 @@ def detect_objects():
         }
         for eachObject in detections
     ]
+
+    # Delete image
+    os.remove(output_image_path)
     
     return JSONResponse(content={"detections": results})
